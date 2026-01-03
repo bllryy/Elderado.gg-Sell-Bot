@@ -58,11 +58,10 @@ npm run dev
 4. Copy the API key to your `.env` file
 5. NOTE YOU MIGHT NEED 50 SALES FOR THIS TO ACTUALLY WORK
 
-**Important Notes:**
+**Notes:**
 - Once you have API access, you may need to update the API endpoint in `src/eldoradoClient.ts`
 - Check the official Eldorado API documentation for the correct endpoint paths
 - The current implementation uses a placeholder endpoint (`/orders`) that needs to be updated
-
 
 ## How It Works
 
@@ -70,20 +69,6 @@ npm run dev
 2. Starts polling the Eldorado API at the configured interval
 3. When a new order is detected, it sends you a DM with order details
 4. Tracks the last seen order to avoid duplicate notifications
-
-## Troubleshooting
-
-### Bot doesn't send messages
-
-- Make sure you've enabled DMs from server members in your privacy settings
-- Verify the bot has the correct permissions
-- Check that `DISCORD_USER_ID` is correct
-
-### API errors
-
-- Verify your `ELDORADO_API_KEY` is valid
-- Check that you have API access enabled on your Eldorado seller account
-- Once you have API documentation, update the endpoint in `src/eldoradoClient.ts:22`
 
 ### TypeScript compilation errors
 
@@ -93,13 +78,9 @@ npm run build
 
 Check the output for specific errors
 
-## Next Steps
+## TODO
 
 1. **Get Eldorado API Access**: Visit the seller API page and obtain your credentials
 2. **Update API Endpoints**: Once you have the official API documentation, update `src/eldoradoClient.ts` with the correct endpoint paths
 3. **Customize Notifications**: Modify `formatOrderMessage()` in `src/index.ts` to change how notifications look
 4. **Adjust Poll Interval**: Change `POLL_INTERVAL` based on your needs (lower = more frequent checks)
-
-## License
-
-MIT
