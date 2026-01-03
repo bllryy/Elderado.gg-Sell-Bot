@@ -1,0 +1,1 @@
+i am looking to make a discord bot that will ping me when someone buys somthing from my eldorado.gg store. I understand that they have https://api.eldorado.io/ however i dont know what else they have that I could use  
