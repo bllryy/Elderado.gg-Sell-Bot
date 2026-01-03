@@ -10,12 +10,6 @@ export function loadConfig(): BotConfig {
     'ELDORADO_API_KEY',
   ];
 
-  for (const varName of requiredVars) {
-    if (!process.env[varName]) {
-      throw new Error(`Missing required environment variable: ${varName}`);
-    }
-  }
-
   return {
     discordBotToken: process.env.DISCORD_BOT_TOKEN!,
     discordUserId: process.env.DISCORD_USER_ID!,

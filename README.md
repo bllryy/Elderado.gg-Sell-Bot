@@ -1,37 +1,20 @@
 # Eldorado.gg Discord Notification Bot
 
+## **NOTE YOU MIGHT NEED 50 SALES FOR THIS TO ACTUALLY WORK**
+1. You can send a email to the support team and try to get access.
+
 A TypeScript Discord bot that sends you direct messages when someone makes a purchase on your Eldorado.gg store.
-
-## Features
-
-- Polls the Eldorado API for new orders (configurable interval)
-- Sends Discord DM notifications for new purchases
-- TypeScript for type safety
-- Easy configuration via environment variables
 
 ## Prerequisites
 
 1. **Node.js** (v18 or higher)
 2. **Discord Bot Token** - [Create a Discord Bot](#creating-a-discord-bot)
 3. **Eldorado API Key** - [Get API Access](#getting-eldorado-api-access)
+   1. **NOTE YOU MIGHT NEED 50 SALES FOR THIS TO ACTUALLY WORK**
 
-## Setup Instructions
+## Setup 
 
-### 1. Install Dependencies
-
-```bash
-npm install
-```
-
-### 2. Configure Environment Variables
-
-Copy the example environment file:
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env` and fill in your credentials:
+Add the `.env`
 
 ```env
 DISCORD_BOT_TOKEN=your_discord_bot_token_here
@@ -41,27 +24,15 @@ ELDORADO_API_URL=https://api.eldorado.io/api
 POLL_INTERVAL=300000
 ```
 
-**Configuration Details:**
-- `DISCORD_BOT_TOKEN`: Your Discord bot token
-- `DISCORD_USER_ID`: Your Discord user ID (the bot will DM you)
-- `ELDORADO_API_KEY`: Your Eldorado API key
-- `ELDORADO_API_URL`: Eldorado API base URL (default: https://api.eldorado.io/api)
-- `POLL_INTERVAL`: How often to check for new orders in milliseconds (default: 300000 = 5 minutes)
-
 ### 3. Build and Run
 
 ```bash
-# Build TypeScript
 npm run build
-
-# Run the bot
 npm start
-
-# Or run in development mode
 npm run dev
 ```
 
-## Creating a Discord Bot
+## Creating the Discord Bot
 
 1. Go to [Discord Developer Portal](https://discord.com/developers/applications)
 2. Click "New Application" and give it a name
@@ -85,26 +56,13 @@ npm run dev
 2. Visit https://www.eldorado.gg/seller-api
 3. Follow the instructions to generate an API key
 4. Copy the API key to your `.env` file
+5. NOTE YOU MIGHT NEED 50 SALES FOR THIS TO ACTUALLY WORK
 
 **Important Notes:**
 - Once you have API access, you may need to update the API endpoint in `src/eldoradoClient.ts`
 - Check the official Eldorado API documentation for the correct endpoint paths
 - The current implementation uses a placeholder endpoint (`/orders`) that needs to be updated
 
-## Project Structure
-
-```
-elderado-bot/
-├── src/
-│   ├── index.ts           # Main bot entry point
-│   ├── config.ts          # Configuration loader
-│   ├── eldoradoClient.ts  # Eldorado API client
-│   └── types.ts           # TypeScript interfaces
-├── .env.example           # Example environment variables
-├── package.json           # Dependencies
-├── tsconfig.json          # TypeScript configuration
-└── README.md              # This file
-```
 
 ## How It Works
 

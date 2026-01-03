@@ -28,7 +28,7 @@ class EldoradoBot {
 
   private setupDiscordHandlers(): void {
     this.discordClient.once('ready', () => {
-      console.log(`✅ Discord bot logged in as ${this.discordClient.user?.tag}`);
+      console.log(`Discord bot logged in as ${this.discordClient.user?.tag}`);
       this.startPolling();
     });
 
@@ -38,7 +38,7 @@ class EldoradoBot {
   }
 
   private startPolling(): void {
-    console.log(`🔄 Starting to poll Eldorado API every ${this.config.pollInterval / 1000} seconds`);
+    console.log(`Starting to poll Eldorado API every ${this.config.pollInterval / 1000} seconds`);
 
     // Initial check
     this.checkForNewOrders();
@@ -68,7 +68,7 @@ class EldoradoBot {
       const message = this.formatOrderMessage(order);
       await user.send(message);
 
-      console.log(`📬 Notification sent for order ${order.id}`);
+      console.log(`Notification sent for order ${order.id}`);
     } catch (error) {
       console.error('Failed to send Discord notification:', error);
     }
@@ -76,7 +76,7 @@ class EldoradoBot {
 
   private formatOrderMessage(order: EldoradoOrder): string {
     const lines = [
-      '🎉 **New Purchase on Eldorado.gg!**',
+      '**New Purchase on Eldorado.gg!**',
       '',
       `**Order ID:** ${order.id}`,
       `**Status:** ${order.status}`,
