@@ -70,14 +70,6 @@ npm run dev
 3. When a new order is detected, it sends you a DM with order details
 4. Tracks the last seen order to avoid duplicate notifications
 
-### TypeScript compilation errors
-
-```bash
-npm run build
-```
-
-Check the output for specific errors
-
 ## TODO
 
 1. **Get Eldorado API Access**: Visit the seller API page and obtain your credentials
